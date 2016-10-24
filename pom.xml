@@ -21,7 +21,6 @@
         <slf4j.version>1.7.21</slf4j.version>
         <c3p0.version>0.9.1.2</c3p0.version>
         <logback-ext-spring.version>0.1.4</logback-ext-spring.version>
-        <junit.version>4.12</junit.version>
         <dubbo.version>2.5.3</dubbo.version>
         <zookeeper.version>3.4.6</zookeeper.version>
         <zkclient.version>0.9</zkclient.version>
@@ -92,11 +91,6 @@
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-        </dependency>
         <!--Mysql连接驱动包-->
         <dependency>
             <groupId>mysql</groupId>
@@ -127,11 +121,18 @@
             <artifactId>commons-lang</artifactId>
             <version>${commons-lang.version}</version>
         </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-        </dependency>
+        <!--log4j相关框架包 此框架暂时存在问题需要手动引入-->
+        <!-- <dependency>
+             <groupId>org.apache.logging.log4j</groupId>
+             <artifactId>log4j-core</artifactId>
+             <version>${log4j2.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>org.apache.logging.log4j</groupId>
+             <artifactId>log4j-web</artifactId>
+             <version>${log4j2.version}</version>
+         </dependency>-->
         <!--logback相关架包-->
         <dependency>
             <groupId>org.logback-extensions</groupId>
@@ -154,32 +155,32 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-        <dependency>
-            <groupId>c3p0</groupId>
-            <artifactId>c3p0</artifactId>
-            <version>${c3p0.version}</version>
-        </dependency>
 
 
-        <!--dubbo相关架包-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>${dubbo.version}</version>
-        </dependency>
+        <!--dubbo相关架包 此框架暂时存在问题需要手动引入-->
+        <!--  <dependency>
+              <groupId>com.alibaba</groupId>
+              <artifactId>dubbo</artifactId>
+              <version>${dubbo.version}</version>
+          </dependency>-->
 
-        <!-- zookeeper相关架包 -->
+        <!-- zookeeper相关架包  此框架暂时存在问题需要手动引入-->
+        <!-- <dependency>
+             <groupId>com.101tec</groupId>
+             <artifactId>zkclient</artifactId>
+             <version>${zkclient.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.zookeeper</groupId>
+             <artifactId>zookeeper</artifactId>
+             <version>${zookeeper.version}</version>
+         </dependency>-->
+        <!-- Servlet -->
         <dependency>
-            <groupId>com.101tec</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>${zkclient.version}</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>${zookeeper.version}</version>
-        </dependency>
-
     </dependencies>
     <build>
         <finalName>dubbo-consumer</finalName>
