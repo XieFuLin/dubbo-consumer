@@ -37,7 +37,19 @@
             <immediateFlush>true</immediateFlush>
         </encoder>
     </appender>
+    <!-- 打印dubbo日志 -->
+    <logger
+            name="com.alibaba.dubbo"
+            level="WARN">
+        <appender-ref ref="dubboRolling"/>
+    </logger>
 
+    <!-- 打印zookeeper日志 -->
+    <logger
+            name="org.apache.zookeeper"
+            level="INFO">
+        <appender-ref ref="dubboRolling"/>
+    </logger>
     <!--打印sql-->
     <logger name="org.mybatis.spring.SqlSessionUtils" level="INFO"/>
 
