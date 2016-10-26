@@ -15,13 +15,13 @@
         <property name="locations">
             <list>
                 <!-- 推荐使用file的方式引入，这样可以将配置和代码分离 -->
-                <value>classpath:config/jdbc/jdbc.properties</value>
-                <value>classpath:config/dubbo/dubbo.properties</value>
+                <value>classpath:/config/jdbc/jdbc.properties</value>
+                <value>classpath:/config/dubbo/dubbo.properties</value>
             </list>
         </property>
     </bean>
     <!--导入mybatis配置文件-->
-    <import resource="/spring/mybatis/spring-mybatis.xml"/>
+    <import resource="mybatis/spring-mybatis.xml"/>
     <!--导入dubbo-consumer配置文件-->
-    <import resource="/spring/dubbo/dubbo-consumer.xml"/>
+    <import resource="dubbo/dubbo-consumer.xml"/>
 </beans>

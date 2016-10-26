@@ -3,6 +3,7 @@ package com.xfl.test.controller;
 import com.xfl.common.controller.BaseController;
 import com.xfl.common.entity.Response;
 import com.xfl.common.enumeration.ResponseStatusEnum;
+import com.xfl.provider.service.IDemoService;
 import com.xfl.test.service.ITestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,8 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/Test")
 public class TestController extends BaseController {
+    @Resource
+    private IDemoService demoService;
     /**
      * 日志打印.
      */
@@ -38,7 +41,7 @@ public class TestController extends BaseController {
     @RequestMapping(method = RequestMethod.GET)
     public Response test() {
         log.info("Test");
-        int count = testService.insertTest();
+        System.out.println(demoService.sayHello("String"));
         return new Response(ResponseStatusEnum.SUCCESS.getCode(), testService.test());
     }
 }
