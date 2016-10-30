@@ -21,6 +21,9 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/Test")
 public class TestController extends BaseController {
+    /**
+     * 该服务由dubbo服务提供者实现，也可以像本地bean一样的使用.
+     */
     @Resource
     private IDemoService demoService;
     /**
