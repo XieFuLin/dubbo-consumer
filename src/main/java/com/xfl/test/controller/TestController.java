@@ -3,7 +3,9 @@ package com.xfl.test.controller;
 import com.xfl.common.controller.BaseController;
 import com.xfl.common.entity.Response;
 import com.xfl.common.enumeration.ResponseStatusEnum;
+import com.xfl.provider.entity.Employee;
 import com.xfl.provider.service.IDemoService;
+import com.xfl.provider.service.IEmployeeService;
 import com.xfl.test.service.ITestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by XFL.
@@ -26,6 +29,11 @@ public class TestController extends BaseController {
      */
     @Resource
     private IDemoService demoService;
+    /**
+     * 员工业务相关实现类,该服务由dubbo提供
+     */
+    @Resource
+    private IEmployeeService employeeService;
     /**
      * 日志打印.
      */
@@ -45,6 +53,7 @@ public class TestController extends BaseController {
     public Response test() {
         log.info("Test");
         System.out.println(demoService.sayHello("String"));
-        return new Response(ResponseStatusEnum.SUCCESS.getCode(), testService.test());
+        List<Employee> employeeList = employeeService.searchEmployeeByName("Test");
+        return new Response(ResponseStatusEnum.SUCCESS.getCode(), employeeList);
     }
 }
