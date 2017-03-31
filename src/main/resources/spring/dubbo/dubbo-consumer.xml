@@ -7,7 +7,7 @@
     http://code.alibabatech.com/schema/dubbo
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!-- 提供方应用名称信息，这个相当于起一个名字，我们dubbo管理页面比较清晰是哪个应用暴露出来的 -->
-    <dubbo:application name="dubbo-consumer" logger="log4j"/>
+    <dubbo:application owner="xfl" name="dubbo-consumer" logger="log4j"/>
     <!-- 使用zookeeper注册中心暴露服务地址 -->
     <!-- check 启动时检查提供者是否存在，true报错，false忽略 -->
     <!-- registry 从指定注册中心注册获取服务列表，在多个注册中心时使用，
